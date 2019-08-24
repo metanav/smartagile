@@ -15,7 +15,7 @@
           this.client.onMessageArrived = this.onMessageArrived;
 
           mqtt_user_name = 'oauth2-user';
-          api_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuczAxIiwic3ViIjoiMjM0NyIsInVzZXJfbmFtZSI6Im5hdmVlbi5icy5rdW1hckBnbWFpbC5jb20iLCJzY29wZSI6WyJyZWFkLW9ubHkiXSwiZXhwIjoxNjE2MzAxODgxLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiMjhkNGMxMDItNmE4ZS00NzQ4LWJmYjMtNGQ1NDQ4YjI1ZTc3IiwiY2xpZW50X2lkIjoicmVhZC1vbmx5In0.FVuuBFwVXwTuaNxZ0F4tDOpYwBZYCr72SeSA6yFsN6Y';
+          api_token = "your api token"
 
           // connect the client
           this.client.connect({
@@ -88,8 +88,8 @@
               onConnect: function() {
                 // Once a connection has been made, make a subscription and send a message.
                 this.message = "Connected";
-                this.client.subscribe('/v1/users/2347/in/devices/TO136-02021000010009F4/datasources/HUMIDITY_TEMPERATURE');
-                this.client.subscribe('/v1/users/2347/in/devices/TO136-02021000010009F4/datasources/PRESSURE');
+                this.client.subscribe('/v1/users/user_id/in/devices/device_id/datasources/HUMIDITY_TEMPERATURE');
+                //this.client.subscribe('/v1/users/user_id/in/devices/device_id/datasources/PROXIMITY');
               },
               onFailure: function(message) {
                 this.message = "onFailure" + message;
